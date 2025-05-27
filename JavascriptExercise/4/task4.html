@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Upcoming Events</h1>
+    </header>
+    <main>
+        <section class="events">
+            <article class="event">
+                <h2>Tech Conference</h2>
+                <p>Date: May 30, 2025</p>
+                <p>Location: Coimbatore, Tamil Nadu</p>
+                <a href="https://example.com/tech-conference" target="_blank" class="event-link">View Details</a>
+                <button class="register-btn">Register</button>
+            </article>
+            <article class="event">
+                <h2>Art Workshop</h2>
+                <p>Date: June 10, 2025</p>
+                <p>Location: Chennai, Tamil Nadu</p>
+                <a href="https://example.com/art-workshop" target="_blank" class="event-link">View Details</a>
+                <button class="register-btn">Register</button>
+            </article>
+        </section>
+
+        <section class="registration">
+            <h2>Register for an Event</h2>
+            <form id="registrationForm">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+
+                <label for="event">Select Event:</label>
+                <select id="event">
+                    <option value="tech">Tech Conference</option>
+                    <option value="art">Art Workshop</option>
+                </select>
+
+                <button type="submit">Register</button>
+            </form>
+            <p id="confirmationMessage"></p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

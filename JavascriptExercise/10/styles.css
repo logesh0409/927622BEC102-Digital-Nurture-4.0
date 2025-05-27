@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #4CAF50, #8BC34A);
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: white;
+}
+
+form {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+input, button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: white;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+}

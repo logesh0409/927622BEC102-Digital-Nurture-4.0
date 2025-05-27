@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.events {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.event-card {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 300px;
+    text-align: center;
+}
+
+.event-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    .events {
+        flex-direction: column;
+        align-items: center;
+    }
+}

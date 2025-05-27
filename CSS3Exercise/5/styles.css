@@ -1,0 +1,40 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.header h1 {
+    font-size: 2em;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #333;
+}
+
+.header p {
+    font-size: 1.2em;
+    font-style: italic;
+    text-align: center;
+    color: #555;
+}
+
+.content h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    text-align: left;
+    color: #222;
+}
+
+.content ul {
+    font-size: 1em;
+    font-weight: 400;
+    text-align: left;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    list-style-type: square;
+    color: #444;
+}

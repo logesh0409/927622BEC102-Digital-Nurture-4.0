@@ -1,0 +1,58 @@
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0;
+}
+
+.navigation li {
+    margin: 0 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    img {
+        width: 80%;
+    }
+}
+
+/* Using % for flexible layouts */
+main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Using vw and vh for flexible layouts */
+h1 {
+    font-size: 5vw;
+}
+
+p {
+    font-size: 2vh;
+}
+
+/* Bonus: Flexbox for responsive layouts */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

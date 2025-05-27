@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Invite with Media Events</title>
+    <script>
+        window.addEventListener('load', function() {
+            const video = document.getElementById('promoVideo');
+            video.oncanplay = function() {
+                alert('Video ready to play');
+            };
+
+            window.onbeforeunload = function(event) {
+                event.preventDefault();
+                event.returnValue = 'You have unsaved changes. Are you sure you want to leave?';
+            };
+        });
+    </script>
+</head>
+<body >
+    <h1>Event Promo Video</h1>
+    <video id="promoVideo" width="640" height="360" controls >
+        <source src="promo video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</body>
+</html>

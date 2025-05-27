@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Save User Preferences</title>
+</head>
+<body>
+    <label for="eventType">Select Event Type:</label>
+    <select id="eventType">
+        <option value="conference">Conference</option>
+        <option value="webinar">Webinar</option>
+        <option value="workshop">Workshop</option>
+    </select>
+    <button id="clearPreferences">Clear Preferences</button>
+
+    <script>
+        // Save selected event type in localStorage
+        document.getElementById('eventType').addEventListener('change', function() {
+            localStorage.setItem('preferredEventType', this.value);
+        });
+
+        // On reload, retrieve and pre-select it
+        window.onload = function() {
+            const savedEventType = localStorage.getItem('preferredEventType');
+            if (savedEventType) {
+                document.getElementById('eventType').value = savedEventType;
+            }
+        };
+
+        // Clear localStorage and sessionStorage when "Clear Preferences" button is clicked
+        document.getElementById('clearPreferences').addEventListener('click', function() {
+            localStorage.clear();
+            sessionStorage.clear();
+            document.getElementById('eventType').value = '';
+        });
+    </script>
+</body>
+</html>

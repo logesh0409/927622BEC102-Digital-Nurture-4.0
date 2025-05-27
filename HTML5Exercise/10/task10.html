@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debugging Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            margin: auto;
+            transition: all 0.3s;
+        }
+        .box:hover {
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Debugging with Chrome DevTools</h2>
+    <p>Click the box to trigger JavaScript events.</p>
+    
+    <div class="box" onclick="handleClick()">Click Me!</div>
+
+    <script>
+        console.log("Debugging started...");
+
+        function handleClick() {
+            console.log("Box clicked!");
+            document.querySelector(".box").style.width = "250px";
+            
+            
+            let message = document.getElementById("nonExistent");
+            message.innerText = "This element doesn't exist!";
+        }
+    </script>
+
+</body>
+</html>

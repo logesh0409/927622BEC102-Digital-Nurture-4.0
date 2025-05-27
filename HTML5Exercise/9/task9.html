@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation for Event Mapping</title>
+</head>
+<body>
+    <button id="findEvents">Find Nearby Events</button>
+    <p id="location"></p>
+
+    <script>
+        document.getElementById("findEvents").addEventListener("click", () => {
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const latitude = position.coords.latitude;
+                        const longitude = position.coords.longitude;
+                        document.getElementById("location").textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
+                    },
+                    (error) => {
+                        switch (error.code) {
+                            case error.PERMISSION_DENIED:
+                                alert("Permission denied. Please allow location access.");
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                alert("Location information is unavailable.");
+                                break;
+                            case error.TIMEOUT:
+                                alert("Location request timed out. Try again.");
+                                break;
+                            default:
+                                alert("An unknown error occurred.");
+                        }
+                    },
+                    { enableHighAccuracy: true, timeout: 5000 }
+                );
+            } else {
+                alert("Geolocation is not supported by your browser.");
+            }
+        });
+    </script>
+</body>
+</html>

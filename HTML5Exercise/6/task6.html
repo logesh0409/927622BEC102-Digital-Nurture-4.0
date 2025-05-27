@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+        }
+        img {
+            width: 150px;
+            transition: 0.3s ease-in-out;
+        }
+    </style>
+    <script>
+        function validatePhone() {
+            let phoneField = document.getElementById("phone");
+            let message = document.getElementById("phoneMessage");
+            let regex = /^[0-9]{10}$/;
+            if (!regex.test(phoneField.value)) {
+                message.textContent = "Invalid phone number!";
+                message.style.color = "red";
+            } else {
+                message.textContent = "";
+            }
+        }
+
+        function displayFee() {
+            let dropdown = document.getElementById("eventDropdown");
+            let feeDisplay = document.getElementById("eventFee");
+            feeDisplay.textContent = "Fee: $" + dropdown.value;
+        }
+
+        function showConfirmation() {
+            alert("Your feedback has been submitted!");
+        }
+
+        function enlargeImage(event) {
+            event.target.style.width = "300px";
+            event.target.style.height = "auto";
+        }
+
+        function countCharacters() {
+            let textarea = document.getElementById("feedback");
+            let charCount = document.getElementById("charCount");
+            charCount.textContent = "Characters: " + textarea.value.length;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Event Feedback Form</h2>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" onblur="validatePhone()">
+        <span id="phoneMessage"></span>
+
+        <br><br>
+
+        <label for="eventDropdown">Select Event:</label>
+        <select id="eventDropdown" onchange="displayFee()">
+            <option value="50">Event A</option>
+            <option value="75">Event B</option>
+            <option value="100">Event C</option>
+        </select>
+        <p id="eventFee"></p>
+
+        <br><br>
+
+        <button onclick="showConfirmation()">Submit Feedback</button>
+
+        <br><br>
+
+        <img src="img.avif" alt="Event Image" ondblclick="enlargeImage(event)">
+
+        <br><br>
+
+        <textarea id="feedback" onkeyup="countCharacters()" placeholder="Enter your feedback..."></textarea>
+        <p id="charCount">Characters: 0</p>
+    </div>
+</body>
+</html>
